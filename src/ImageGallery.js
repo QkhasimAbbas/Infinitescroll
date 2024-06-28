@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import ImageComponent from './ImageComponent';
+const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
+
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
-  const UNSPLASH_ACCESS_KEY = 'oGH3NaRf1X55HYQc5bpmzTOv47XWxxsjcoWCy_m4QdM';  
+  const UNSPLASH_ACCESS_KEY = accessKey;  
 
   const fetchImages = async (page) => {
     setLoading(true);
